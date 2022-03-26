@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useSelector } from "react-redux";
+import { showMauve, showYellowGreen } from "./action/ShowColor";
+import { useDispatch } from "react-redux";
 
 function App() {
+  const color = useSelector((state) => state);
+  const dispatch = useDispatch();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>My favorite color is {color}</h1>
+      <div>
+        <input
+          type="checkbox"
+          value="mauve"
+          onClick={() => dispatch(showMauve())}
+        />
+        <label>mauve</label>
+      </div>
+      <div>
+        <input type="checkbox" value="yellow-green" />
+        <label>yellow green</label>
+      </div>
+      <div>
+        <input type="checkbox" value="robbin-egg" />
+        <label>robin's egg</label>
+      </div>
+      <div>
+        <input type="checkbox" value="bubblegum" />
+        <label>bubblegum</label>
+      </div>
     </div>
   );
 }
