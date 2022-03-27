@@ -1,35 +1,50 @@
 import "./App.css";
 import { useSelector } from "react-redux";
-import { showMauve, showYellowGreen } from "./action/ShowColor";
+import {
+  showLavender,
+  showSkyBlue,
+  showLemonYellow,
+  showCoral,
+} from "./action/ShowColor";
 import { useDispatch } from "react-redux";
 
 function App() {
   const color = useSelector((state) => state);
   const dispatch = useDispatch();
-
   return (
     <div className="App">
-      <h1>My favorite color is {color}</h1>
-      <div>
-        <input
-          type="checkbox"
-          value="mauve"
-          onClick={() => dispatch(showMauve())}
-        />
-        <label>mauve</label>
-      </div>
-      <div>
-        <input type="checkbox" value="yellow-green" />
-        <label>yellow green</label>
-      </div>
-      <div>
-        <input type="checkbox" value="robbin-egg" />
-        <label>robin's egg</label>
-      </div>
-      <div>
-        <input type="checkbox" value="bubblegum" />
-        <label>bubblegum</label>
-      </div>
+      <h2>Your favorite color is {color}</h2>
+      <input
+        type="checkbox"
+        name="color"
+        value="lavender"
+        onClick={() => dispatch(showLavender())}
+      />
+      <label>lavender</label>
+
+      <input
+        type="checkbox"
+        name="color"
+        value="sky-blue"
+        onClick={() => dispatch(showSkyBlue())}
+      />
+      <label>sky blue</label>
+
+      <input
+        type="checkbox"
+        name="color"
+        value="lemon-yellow"
+        onClick={() => dispatch(showLemonYellow())}
+      />
+      <label>lemon yellow</label>
+
+      <input
+        type="checkbox"
+        name="color"
+        value="coral"
+        onClick={() => dispatch(showCoral())}
+      />
+      <label>coral</label>
     </div>
   );
 }

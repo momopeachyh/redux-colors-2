@@ -1,9 +1,13 @@
 const colorReducer = (state, action) => {
   switch (action.type) {
-    case " SHOW_MAUVE":
-      return "mauve";
-    case "SHOW_YELLOW_GREEN":
-      return "yellow green";
+    case "SHOWLAVENDER":
+      return "lavender";
+    case "SHOWSKYBLUE":
+      return "sky blue";
+    case "SHOWLEMONYELLOW":
+      return "lemon yellow";
+    case "SHOWCORAL":
+      return "coral";
   }
 };
 

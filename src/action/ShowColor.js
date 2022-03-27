@@ -1,10 +1,23 @@
-export const showMauve = () => {
+export const showLavender = () => {
   return {
-    type: "SHOW_MAUVE",
+    type: "SHOWLAVENDER",
   };
 };
-export const showYellowGreen = () => {
+
+export const showSkyBlue = () => {
   return {
-    type: "SHOW_YELLOW_GREEN",
+    type: "SHOWSKYBLUE",
+  };
+};
+
+export const showLemonYellow = () => {
+  return {
+    type: "SHOWLEMONYELLOW",
+  };
+};
+
+export const showCoral = () => {
+  return {
+    type: "SHOWCORAL",
   };
 };
