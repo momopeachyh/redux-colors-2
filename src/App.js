@@ -7,18 +7,27 @@ import { useSelector } from "react-redux";
 //   showCoral,
 // } from "./action/ShowColor";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
 
 function App() {
-  const [color, setColor] = useState("");
   const dispatch = useDispatch();
   const colorValue = useSelector((state) => state.color);
   const handleChange = (event) => {
-    setColor(event.target.value);
-    dispatch({
-      type: "CHANGE_COLOR",
-      payload: event.target.value,
-    });
+    if (event.target.checked) {
+      dispatch({
+        type: "ADD_COLOR",
+        payload: event.target.value,
+      });
+    } else {
+      dispatch({
+        type: "REMOVE_COLOR",
+        payload: event.target.value,
+      });
+    }
+    // setColor(event.target.value);
+    // dispatch({
+    //   type: "CHANGE_COLOR",
+    //   payload: event.target.value,
+    // });
   };
   return (
     <div className="App">
