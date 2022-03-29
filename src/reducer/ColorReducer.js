@@ -1,14 +1,17 @@
-const colorReducer = (state, action) => {
-  switch (action.type) {
-    case "SHOWLAVENDER":
-      return "lavender";
-    case "SHOWSKYBLUE":
-      return "sky blue";
-    case "SHOWLEMONYELLOW":
-      return "lemon yellow";
-    case "SHOWCORAL":
-      return "coral";
-  }
+const initialState = {
+  color: null,
 };
 
-export default colorReducer;
+const ColorReducer = (state = initialState, action) => {
+  const newState = { ...state };
+  switch (action.type) {
+    case "CHANGE_COLOR":
+      newState.color = action.payload;
+      break;
+    default:
+      return newState;
+  }
+  return newState;
+};
+
+export default ColorReducer;
